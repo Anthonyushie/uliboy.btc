@@ -33,15 +33,6 @@ const projects = [
     demo: "#"
   },
   {
-    name: "Versturen",
-    description: "Crowdfunding platform specifically designed for grassroots builders",
-    role: "Lead Developer",
-    stack: ["React", "Node.js", "Solana"],
-    hackathon: "Radar Hackathon",
-    github: "#",
-    demo: "#"
-  },
-  {
     name: "Skibidi.cash",
     description: "Experimental meme-based Lightning Network micropayment system",
     role: "Protocol Developer",
