@@ -1,0 +1,117 @@
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Github, ExternalLink } from "lucide-react";
+
+const projects = [
+  {
+    name: "QuaddFinance",
+    description: "USSD Lightning wallet built with tbDEX SDK for financial inclusion",
+    role: "Frontend Developer / Project manager",
+    stack: ["Lightning Network", "tbDEX", "USSD", "Node.js"],
+    hackathon: "tbDEX Hackathon, 2024",
+    github: "#",
+    demo: "#"
+  },
+  {
+    name: "SolEarn",
+    description: "On-chain payroll system for Solana DAOs with automated distributions",
+    role: "Project manager",
+    stack: ["Solana", "Rust", "React", "Web3.js"],
+    hackathon: "Grizzlython Hackathon",
+    github: "#",
+    demo: "#"
+  },
+  {
+    name: "SolNexus",
+    description: "Decentralized event ticketing platform built on Solana blockchain",
+    role: "Frontend Developer",
+    stack: ["Solana", "Anchor", "TypeScript"],
+    hackathon: "Solana Colosseum Hackathon",
+    github: "#",
+    demo: "#"
+  },
+  {
+    name: "Versturen",
+    description: "Crowdfunding platform specifically designed for grassroots builders",
+    role: "Lead Developer",
+    stack: ["React", "Node.js", "Solana"],
+    hackathon: "Radar Hackathon",
+    github: "#",
+    demo: "#"
+  },
+  {
+    name: "Skibidi.cash",
+    description: "Experimental meme-based Lightning Network micropayment system",
+    role: "Protocol Developer",
+    stack: ["Lightning Network", "Bitcoin", "React", "Breez SDK"],
+    hackathon: "Skibidi.cash Hackathon",
+    github: "#",
+    demo: "#"
+  },
+  {
+    name: "YakiHonne Agentic Mini App",
+    description: "AI-powered mini application for enhanced user interactions",
+    role: "Frontend Developer",
+    stack: ["React", "AI/ML", "TypeScript", "Nostr"],
+    hackathon: "Current Project",
+    github: "#",
+    demo: "#"
+  }
+];
+
+export const Projects = () => {
+  return (
+    <section id="projects" className="py-16 sm:py-20 px-4 sm:px-6 bg-muted/30">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-mono mb-4 text-center">
+          <span className="text-primary">//</span> Projects & Hackathons
+        </h2>
+        <p className="text-center text-muted-foreground mb-8 sm:mb-12 font-mono text-sm sm:text-base">
+          Building the future of Bitcoin, one hack at a time
+        </p>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          {projects.map((project, index) => (
+            <Card key={index} className="flex flex-col h-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 group">
+              <CardHeader className="pb-3">
+                <div className="flex justify-between items-start">
+                  <CardTitle className="font-mono text-base sm:text-lg leading-tight">{project.name}</CardTitle>
+                  <div className="flex gap-2">
+                    <Button variant="ghost" size="sm" asChild>
+                      <a href={project.github} target="_blank" rel="noopener noreferrer">
+                        <Github className="h-4 w-4" />
+                      </a>
+                    </Button>
+                    <Button variant="ghost" size="sm" asChild>
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="h-4 w-4" />
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+                <CardDescription className="text-sm">
+                  <span className="text-primary font-medium">{project.role}</span> • {project.hackathon}
+                </CardDescription>
+              </CardHeader>
+              
+              <CardContent className="flex-1 flex flex-col">
+                <p className="text-sm text-muted-foreground mb-4 flex-1">
+                  {project.description}
+                </p>
+                
+                <div className="flex flex-wrap gap-2">
+                  {project.stack.map((tech, techIndex) => (
+                    <Badge key={techIndex} variant="secondary" className="text-xs font-mono">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
