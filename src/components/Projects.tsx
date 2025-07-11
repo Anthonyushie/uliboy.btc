@@ -11,7 +11,7 @@ const projects = [
     role: "Frontend Developer / Project manager",
     stack: ["Lightning Network", "tbDEX", "USSD", "Node.js"],
     hackathon: "tbDEX Hackathon, 2024",
-    github: "#",
+    github: "https://github.com/QuaddBox/Quad-Finance",
     demo: "#"
   },
   {
@@ -20,7 +20,7 @@ const projects = [
     role: "Project manager",
     stack: ["Solana", "Rust", "React", "Web3.js"],
     hackathon: "Grizzlython Hackathon",
-    github: "#",
+    github: "https://github.com/SolEarn-1-0",
     demo: "#"
   },
   {
@@ -29,7 +29,7 @@ const projects = [
     role: "Frontend Developer",
     stack: ["Solana", "Anchor", "TypeScript"],
     hackathon: "Solana Colosseum Hackathon",
-    github: "#",
+    github: "https://github.com/QuaddBox/Sol-Nexus-Front-end",
     demo: "#"
   },
   {
@@ -47,7 +47,7 @@ const projects = [
     role: "Protocol Developer",
     stack: ["Lightning Network", "Bitcoin", "React", "Breez SDK"],
     hackathon: "Skibidi.cash Hackathon",
-    github: "#",
+    github: "https://github.com/Anthonyushie/sigma-wallet",
     demo: "#"
   },
   {
@@ -56,7 +56,7 @@ const projects = [
     role: "Frontend Developer",
     stack: ["React", "AI/ML", "TypeScript", "Nostr"],
     hackathon: "Current Project",
-    github: "#",
+    github: "https://github.com/Anthonyushie/tiptide-widget",
     demo: "#"
   }
 ];

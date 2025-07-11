@@ -62,10 +62,16 @@ export const Hero = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 font-mono w-full sm:w-auto">
-                <ExternalLink className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
-                View My Work
-              </Button>
+                      <a
+          href="https://github.com/yourusername"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+        <Button size="lg" className="text-base sm:text-lg px-6 sm:px-8 font-mono w-full sm:w-auto">
+          <ExternalLink className="mr-2 h-4 w-4 sm:h-5 sm:w-5" />
+          View My Work
+        </Button>
+      </a>
             </motion.div>
             <motion.div
               whileHover={{ scale: 1.05 }}
