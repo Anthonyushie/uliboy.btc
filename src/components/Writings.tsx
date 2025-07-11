@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { BookOpen, ExternalLink, Calendar } from "lucide-react";
+import { motion } from "framer-motion";
 
 const writings = [
   {
@@ -46,7 +47,7 @@ const topics = [
 
 export const Writings = () => {
   return (
-    <section id="writings" className="py-20 px-6 bg-muted/30">
+    <section id="writings" className="py-20 px-6 bg-muted/30 relative">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold font-mono mb-4 text-center">
           <span className="text-primary">//</span> Writings
@@ -54,7 +55,7 @@ export const Writings = () => {
         <p className="text-center text-muted-foreground mb-12 font-mono">
           Sharing thoughts on Bitcoin, technology, and building for adoption
         </p>
-        
+
         {/* Featured Articles */}
         <div className="mb-12">
           <h3 className="text-xl font-bold font-mono mb-6 flex items-center">
@@ -62,7 +63,7 @@ export const Writings = () => {
             Featured Articles
           </h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 blur-sm">
             {writings.filter(article => article.featured).map((article, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardHeader>
@@ -111,7 +112,7 @@ export const Writings = () => {
         <div className="mb-12">
           <h3 className="text-xl font-bold font-mono mb-6">All Articles</h3>
           
-          <div className="space-y-4">
+          <div className="space-y-4 blur-sm">
             {writings.map((article, index) => (
               <Card key={index} className="hover:shadow-md transition-shadow">
                 <CardContent className="p-6">
@@ -142,7 +143,7 @@ export const Writings = () => {
         
         {/* Topics */}
         <div>
-          <h3 className="text-xl font-bold font-mono mb-6">Writing Topics</h3>
+          <h3 className="text-xl font-bold font-mono mb-6 blur-sm">Writing Topics</h3>
           <div className="flex flex-wrap gap-3">
             {topics.map((topic, index) => (
               <Badge key={index} variant="secondary" className="font-mono">
@@ -152,6 +153,42 @@ export const Writings = () => {
           </div>
         </div>
       </div>
+      
+      {/* Under Development Overlay */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm"
+      >
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-center p-8 bg-card/90 rounded-2xl border border-primary/20 shadow-2xl max-w-md mx-4"
+        >
+          <motion.div
+            animate={{ rotate: [0, 360] }}
+            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+            className="text-6xl mb-4"
+          >
+            ⚡
+          </motion.div>
+          
+          <motion.h3
+            className="text-2xl font-bold font-mono text-primary mb-2"
+            animate={{ opacity: [1, 0.7, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            Under Development
+          </motion.h3>
+          
+          <p className="text-muted-foreground font-mono text-sm">
+            Building something amazing with Bitcoin.<br />
+            Check back soon for my latest writings!
+          </p>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
