@@ -168,8 +168,6 @@ export const Writings = () => {
           className="text-center p-8 bg-card/90 rounded-2xl border border-primary/20 shadow-2xl max-w-md mx-4"
         >
           <motion.div
-            animate={{ rotate: [0, 360] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
             className="text-6xl mb-4"
           >
             ⚡
