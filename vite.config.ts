@@ -9,6 +9,12 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  esbuild: {
+    loader: "tsx",
+    include: /src\/.*\.[tj]sx?$/,
+    exclude: [],
+    jsx: "automatic",
+  },
   plugins: [
     react(),
     mode === 'development' &&
